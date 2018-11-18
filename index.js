@@ -46,6 +46,7 @@ let fukgerMessage = ["ควย","หี","แตด","เย็ดแม่","�
 const app = express();
 app.use('/static', express.static('static'));
 app.use('/downloaded', express.static('downloaded'));
+app.get('/', (req, res) => res.end('เฟรนจังกำลังเปิดใช้งานอยู่ค่ะ ( ^ 3 ^ )'));
 app.get('/callback', (req, res) => res.end('เฟรนจังกำลังเปิดใช้งานอยู่ค่ะ ( + v + )'));
 app.post('/callback', line.middleware(config), (req, res) => {
   if (req.body.destination) {
@@ -84,8 +85,8 @@ const replyImage = (token, urls) => {
     replyToken,
     {
       type: 'image',
-      urls[0],
-      urls[1],
+      originalContentUrl: urls[0],
+      previewImageUrl: urls[1],
     }
   );
 };
