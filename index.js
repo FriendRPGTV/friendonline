@@ -799,7 +799,7 @@ function onCommand(message, replyToken) {
       `- คำสั่งดูโปรไฟล์ (profile)`,
       `- คำสั่งส่งรูปโปรไฟล์ (${prefix}${command.avatar[0].text})`,
       `- คำสั่งดูข้อมูลบอท (${prefix}${command.bot[0].text} หรือ ${prefix}${command.bot[1].text})`,
-      `- คำสั่งดูความสัมพันธ์ (${prefix}${command.love[0].text]} หรือ ${prefix}${command.love[1].text})`,
+      `- คำสั่งดูความสัมพันธ์ (${prefix}${command.love[0].text} หรือ ${prefix}${command.love[1].text})`,
       `- คำสั่งดูข้อมูลผู้สร้างบอท (${prefix}${command.creator[0].text} หรือ ${prefix}${command.creator[1].text})`,
       `- คำสั่งค้นหาวิดีโอจากยูทูป (${prefix}${command.youtube[0].text} <ชื่อวิดีโอ> หรือ ${prefix}${command.youtube[1].text} <ชื่อวิดีโอ>)`,
       `- คำสั่งค้นหาข้อมูลจากกูเกิ้ล (${prefix}${command.search[0].text} <คำค้น> หรือ ${prefix}${command.search[1].text} <คำค้น>)`,
