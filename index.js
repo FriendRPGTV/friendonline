@@ -222,7 +222,7 @@ async function sendNeko(message, replyToken, endpoint) {
   if (end === 'face') end = 'avatar';
   let url = `https://nekos.life/api/v2/img/${end}`;
   const Image = new Promise((resolve, reject) => {
-    https(url, (res) => {
+    https.get(url, (res) => {
       const {statusCode} = res;
       if(statusCode !== 200) {
         res.resume();
@@ -540,7 +540,7 @@ function lunaChat(author, message, replyToken) {
   let sender = author;
   let name = sender.username;
   let say = message.text;
-  if (rude(say, message)) return;
+  if (rude(say, author, message)) return;
   luna.newUser(sender.id);
   let reply = luna.replyTo(say);
   if (reply && say.includes(reply.ask)) {
@@ -746,20 +746,20 @@ function onCommand(author, message, replyToken) {
     const love = luna.getLove(sender.id);
     const em = 
       `ข้อมูลความสัมพันธ์ของคุณ ${name}`+
-      `ระดับความรัก : ${love.heart}`+
-      `ความรู้สึก : ${love.message}`+
-      `แต้มปัจจุบัน : ${love.point}`
+      `\nระดับความรัก : ${love.heart}`+
+      `\nความรู้สึก : ${love.message}`+
+      `\nแต้มปัจจุบัน : ${love.point}`
     ;
     return replyText(replyToken, em);
   }
   if (cmd === command.ox[0].text || cmd === command.ox[1].text) {
-    return sendGame(message, replyToken, command.ox[0].text);
+    return sendGame(author, message, replyToken, command.ox[0].text);
   }
   if (cmd === command.rpc[0].text || cmd === command.rpc[1].text) {
-    return sendGame(message, replyToken, command.rpc[0].text);
+    return sendGame(author, message, replyToken, command.rpc[0].text);
   }
   if (cmd === command.avatar[0].text || cmd === command.avatar[1].text) {
-    return sendAvatar(message, replyToken);
+    return sendAvatar(author, message, replyToken);
   }
   if (cmd === command.search[0].text || cmd === command.search[1].text) {
     return sendSearch(message, replyToken);
@@ -858,7 +858,7 @@ function handleLeave(message, replyToken, source) {
 
 function handleText(message, replyToken, source) {
   const buttonsImageURL = `${baseURL}/static/buttons/1040.jpg`;
-  var author = { type:'', id:'' ,username:'', status:'', avatarURL:'' };
+  const author = { type:'', id:'' ,username:'', status:'', avatarURL:'' };
   client.getProfile(source.userId)
   .then((profile) => {
     console.log('[Profile]');
@@ -866,15 +866,13 @@ function handleText(message, replyToken, source) {
     author.username = profile.displayName;
     author.type = source.type;
     author.id = source.userId;
-    if (source.type === 'user') {
-      author.status = profile.statusMessage;
-      author.avatarURL = profile.pictureUrl;
-    }
+    author.status = profile.statusMessage;
+    author.avatarURL = profile.pictureUrl;
   });
   switch (message.text) {
     case 'profile':
       if (source.userId) {
-        return replyText(replyToken, [`ชื่อ: ${author.username}`, `สถานะ: ${author.status}`]);
+        return replyText(replyToken, `ชื่อ: ${author.username}\nสถานะ: ${author.status}`]);
         //sendAvatar(message, replyToken);
       } else {
         return replyText(replyToken, 'คุณไม่สามารถใช้คำสั่งนี้ได้ค่ะ');
