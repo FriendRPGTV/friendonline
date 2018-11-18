@@ -82,7 +82,7 @@ const webhooks = (embed) => {
   }, (error, response, body) => {
     console.log(body)
   });*/
-  requests.post({
+  request.post({
     url: webhook_url,
     data: JSON.stringify(embed),
     headers: { 'Content-Type': 'application/json' }
