@@ -1,13 +1,13 @@
 {
   "name": "friend",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A Friend Official LINE bot",
   "main": "index.js",
   "scripts": {
     "start": "node ."
   },
   "dependencies": {
-    "@line/bot-sdk": "../../",
+    "@line/bot-sdk": "^6.3.0",
     "canvas": "^1.6.10",
     "express": "^4.16.2",
     "google": "^1.0.1",
@@ -24,6 +24,5 @@
     "simple-youtube-api": "^5.0.2",
     "youtube-info": "^1.2.0",
     "ytdl-core": "^0.21.1"
-    
   }
 }
