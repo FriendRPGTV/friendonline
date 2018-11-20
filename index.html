@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Friend Chan | Chatbot Role Playing Game</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Chakung">
+    <meta name="title" content="Friend Chan's Dashboard">
+    <meta name="description" content="Friend Chan made with ❤ by ChaKung.">
+    <meta name="keywords" content="Friend Chan, Friend Bot, A Discord Bot, Bot Discord, บอท Friend Chan, บอทเฟรนจัง, เล่นบอท, เล่นกับบอทเฟรน, บอทดิสคอร์ด, บอทไลน์, LINE Bot, LINE Bot Friend Chan, สอนบอทพูด, เกมส์แชทบอท, บอทเพลง, Music Bot, บอทคนไทย, Thai Bot, Bot Developer, Bot IoT, Bot Machine Learning, Friend RPG, FRIENDRPG, Chakung, Facebook Bot, Messenger Bot, บอทเฟสบุ๊ก, บอทน่ารัก, บอทมาใหม่, บอทดาวน์โหลด, บอทอัตโนมัติ, Auto Bot, Auto Reply Bot, Bot Chakung, บอทชาคุง, ชาคุง, บอทเกมอนิเมะ, บอทเกม, เล่น เกมส์, เกมส์ ฟรี, เกมส์ ออนไลน์, เล่น เกมส์ แชทบอท ออนไลน์, Node.js, Express, Instant Messaging">
+    <meta name="theme-color" content="#3399ff">
+    <meta name="msapplication-TileColor" content="#3399ff">
+    <meta name="msapplication-TileImage" content="/static/icons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/static/icons/browserconfig.xml">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Friend Chan">
+    <meta name="application-name" content="Friend Chan"><meta property="og:url" content="https://friendchan.xyz">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Friend Chan's Dashboard">
+    <meta property="og:description" content="Friend Chan made with ❤ by ChaKung.">
+    <meta property="og:image" content="./images/Avatar.jpg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="/static/icons/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png">
+    <link rel="manifest" href="/static/icons/manifest.json">
+    <link rel="mask-icon" href="/static/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/static/icons/favicon.ico">
+    <link rel="icon" href="./images/Avatar.jpg" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300?v=1" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=1">
+    <link rel="stylesheet" href="./css/cha.css">
+    <link rel="stylesheet" href="./css/bulma.css?v=1">
+    <link rel="stylesheet" href="./css/bulma-divider.css?v=1">
+    
+  </head>
+  <body>
+    <div class="scrolltop"><span><i class="fa fa-angle-up sts"></i></span></div>
+    <nav class="navbar is-white" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <img id="dashboard-icon" src="./images/Avatar.jpg?v=1" style="border-radius: 100%;width: 30px;vertical-align: bottom;margin-right:5px;">&nbsp;<div style="font-size: 21px">Friend Chan | เฟรนจัง</div>
+        </a>
+        <button class="button navbar-burger is-white" data-target="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+      </div>
+      <div class="navbar-menu is-white" id="navMenu">
+        <div class="navbar-start is-white">
+          <a class="navbar-item is-white" href="./dashboard"><span><i class="fa fa-home" aria-hidden="true"></i></span>&nbsp;Dashboard</a>
+          <a class="navbar-item" href="./intro"><span><i class="fa fa-book" aria-hidden="true"></i></span>&nbsp;Introduction</a>
+          <a class="navbar-item" href="./support"><span><i class="fa fa-comments" aria-hidden="true"></i></span>&nbsp;Support</a>
+          <a class="navbar-item" href="./link"><span><i class="fa fa-link" aria-hidden="true"></i></span>&nbsp;About</a>
+          <a class="navbar-item" href="./command"><span><i class="fa fa-code" aria-hidden="true"></i></span>&nbsp;Commands</a>
+          <a class="navbar-item" href="https://discord.gg/49ksd4V" target="_blank"><img src="./images/Discord.png?v=1" alt="Discord Server"/></a>
+		  <p class="navbar-item" style="font-size: 13px">Wants to help the development of the bot ? Consider donating<a class="donate" href="./donate">&nbsp;here</a>.</p>
+        </div>
+        <div class="navbar-end is-transparent">
+          <a class="navbar-item" href="./login">
+            <span><i class="fa fa-sign-in" aria-hidden="true"></i></span>&nbsp;Login
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-top"></div>
+    <header class="hero is-white">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <img src="./images/Avatar.jpg?v=1" class="avatar">
+          <h1 class="title has-text-dark title-favcolor">Friend Chan</h1>
+          <h2 class="subtitle has-text-dark">Chatbot made with love by ChaKung.</h2>
+          <a class="button is-favcolor is-medium is-outlined" href="./download" role="button" style="margin-right:20px">
+            <span><i class="fa fa-plus" aria-hidden="true"></i></span>&nbsp;Invite
+          </a>
+          <a class="button is-favcolor is-medium is-outlined" href="./login" role="button">
+            <span><i class="fa fa-sign-in" aria-hidden="true"></i></span>&nbsp;Login
+          </a>
+          <div class="scroll"><span><i class="fa fa-angle-down"></i></span></div>
+        </div>
+      </div>
+    </header>
+    <section class="section" id="section">
+      <h1 class="title title-font">Youtube Review Bot Friend Chan</h1>
+      <div class="container is-fluid has-text-centered">
+      	<div class="container">
+      	  <div class="widget">
+              <iframe width="560" height="349" src="https://www.youtube-nocookie.com/embed/y5JyUNrzkz8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+      	  </div>
+      	  <br>
+      	</div>
+		<br>
+		
+		<div class="card">
+          <div class="card-content">
+            <h1 class="title">
+              Statistics
+            </h1>
+            <nav class="level">
+              <div class="level-item">
+                <div>
+                  <p class="heading">Users</p>
+                  <p class="title">2</p>
+                </div>
+              </div>
+              <div class="level-item">
+                <div>
+                  <p class="heading">Guilds</p>
+                  <p class="title">2</p>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer is-dark">
+    <div class="container is-fluid has-text-centered">
+        <!--<iframe id="fb_widget" style="width: 100%; height: 350px;" src="http://www.facebook.com/plugins/page.php?href=https://www.facebook.com/aottgdf&tabs=timeline,messages&height=450&colorscheme=dark&show_faces=true&header=false&stream=false&show_border=false"></iframe>
+        -->
+    </div>
+    </footer>
+    <div class="footer-copyright">
+        <div class="container">
+            COPYRIGHT © 2018 FRIENDRPG ALL RIGHTS RESERVED.
+        </div>
+    </div>
+    <script src="./js/cha.js?v=2"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js?v=1"></script>
+    
+  </body>
+</html>
