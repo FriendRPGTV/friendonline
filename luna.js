@@ -66,7 +66,8 @@ function lunaDB(event, config) {
     if (e === 'load') {
       if (no._l == 0) {
         no._l = 1;
-        return fs.readFile(part+db, (err, data) => {
+        return fs.readFile('.'+part+db, (err, data) => {
+          if (err) return console.log(err);
           log('DB: Importing data...');
           //res(JSON.parse(data));
           log('DB: Data was loaded.');
