@@ -21,12 +21,12 @@ const https = require('https');
 const {URL, URLSearchParams} = require('url');
 const LunaClient = require('./luna');
 const luna = new LunaClient();
-//const manager = LunaClient.manager;
+const manager = LunaClient.manager;
 const config = {
   channelAccessToken: process.env.TOKEN,
   channelSecret: process.env.SECRET,
 };
-const manager = luna.database({name: 'load'}).then((ret) => { return ret; });
+//const manager = luna.database({name: 'load'}).then((ret) => { return ret; });
 console.log('DB: '+manager);
 console.log(manager);
 let baseURL = process.env.URL;

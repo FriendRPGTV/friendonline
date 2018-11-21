@@ -9,7 +9,7 @@
 // © Copyrights Luna Project
 //============================================
 const fs = require('fs');
-const manager = require('./manager.json');
+const manager = require('./static/manager.json');
 const dbconfig = { part: '/static/', file: 'manager.json' };
 const log = (text) => { console.log(text) };
 function isPoint(str, ID) {
@@ -69,7 +69,6 @@ function lunaDB(event, config) {
         return fs.readFile('.'+part+db, (err, data) => {
           if (err) return console.log(err);
           log('DB: Importing data...');
-          res.json();
           res(JSON.parse(data));
           log('DB: Data was loaded.');
           no._l = 0;
