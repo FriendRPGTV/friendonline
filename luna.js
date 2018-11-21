@@ -64,12 +64,11 @@ function lunaDB(event, config) {
   var out;
   return new Promise((res, rej) => {
     if (e === 'load') {
-      out = fs.createReadStream(__dirname+part+db);
       if (no._l == 0) {
         no._l = 1;
-        log('DB: Importing data...');
-        out.on('pipe', (chunk) => {
-          res(JSON.parse(chunk));
+        fs.readFile(part+db, (err, data) => {
+          log('DB: Importing data...');
+          res(JSON.parse(data));
           log('DB: Data was loaded.');
           no._l = 0;
         });
