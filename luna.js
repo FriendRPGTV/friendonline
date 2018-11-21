@@ -69,11 +69,11 @@ function lunaDB(event, config) {
         return fs.readFile('.'+part+db, (err, data) => {
           if (err) return console.log(err);
           log('DB: Importing data...');
+          res.json();
           res(JSON.parse(data));
           log('DB: Data was loaded.');
           no._l = 0;
           //return JSON.parse(data);
-          
         });
       } else { rej('DB: Error load database is using now.'); 
       }
