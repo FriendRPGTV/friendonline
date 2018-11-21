@@ -8,7 +8,7 @@
 //            ...
 // © Copyrights Luna Project
 //============================================
-const fs = requir('fs');
+const fs = require('fs');
 const manager = require('./manager.json');
 const dbconfig = { part: '/static/', managar: 'manager.json' };
 const log = (text) => { console.log(text) };
