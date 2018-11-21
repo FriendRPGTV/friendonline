@@ -10,7 +10,7 @@
 //============================================
 const fs = require('fs');
 const manager = require('./manager.json');
-const dbconfig = { part: '/static/', managar: 'manager.json' };
+const dbconfig = { part: '/static/', file: 'manager.json' };
 const log = (text) => { console.log(text) };
 function isPoint(str, ID) {
     let result = '';
@@ -60,7 +60,7 @@ var no = { _l: 0, _s: 0 };
 function lunaDB(event, config) {
   let e = event.name;
   let part = config.part;
-  let db = config.manager;
+  let db = config.file;
   var out;
   //return new Promise((res, rej) => {
     if (e === 'load') {
