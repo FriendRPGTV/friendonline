@@ -10,7 +10,7 @@
 //============================================
 const fs = requir('fs');
 const manager = require('./manager.json');
-const dbconfig = { part: '/static/', managar: 'manager.json' }: 
+const dbconfig = { part: '/static/', managar: 'manager.json' };
 const log = (text) => { console.log(text) };
 function isPoint(str, ID) {
     let result = '';
