@@ -8,8 +8,10 @@
 //            ...
 // © Copyrights Luna Project
 //============================================
+const fs = requir('fs');
 const manager = require('./manager.json');
-
+const dbconfig = { part: '/static/', managar: 'manager.json' }: 
+const log = (text) => { console.log(text) };
 function isPoint(str, ID) {
     let result = '';
     result = str;
@@ -54,10 +56,43 @@ function saveLove(user,point) {
         if (user.level > 9)
             user.message = '💍 ที่รัก';
 }
-
+var no = { _l: 0, _s: 0 };
+function lunaDB(event, config) {
+  let e = event.name;
+  let part = config.part;
+  let db = config.manager;
+  var out;
+  return new Promise((res, rej) => {
+    if (e === 'load') {
+      out = fs.createReadStream(__dirname+part+db);
+      if (no._l == 0) {
+        no._l = 1;
+        log('DB: Importing data...');
+        out.on('pipe', (chunk) => {
+          res(JSON.parse(chunk));
+          log('DB: Data was loaded.');
+          no._l = 0;
+        });
+      } else { rej('DB: Error load database is using now.'); }
+    } else if (e === 'save') {
+      out = fs.createWriteStream(__dirname+part+db);
+      if (no._s == 0) {
+        no._s = 1;
+        out.write(JSON.stringify(event.data), () => { no._s = 0; log('DB: New data has saved at '+(new Date)); });
+        res({msg: 'done'});
+      } else { rej('DB: Error save database is using now.'); }
+    } else {
+      log('DB: No event ' + e);
+      rej('DB: Error cant connect to database.');
+    }
+  }).catch((err) => log(err));
+}
 class LunaClient {
   constructor() {
     let self = this;
+    self.database = (event) => {
+      return lunaDB(event, dbconfig);
+    };
     self.newUser = (ID, noU = true) => {
         manager.love.forEach(user => { if (user.id == ID) noU = false; });
         if (noU) manager.love.push({ id: ID, point: 1, level: 1, heart: ":heart:", message: "สนุก" });
