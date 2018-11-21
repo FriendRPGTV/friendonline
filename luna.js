@@ -62,29 +62,32 @@ function lunaDB(event, config) {
   let part = config.part;
   let db = config.manager;
   var out;
-  return new Promise((res, rej) => {
+  //return new Promise((res, rej) => {
     if (e === 'load') {
       if (no._l == 0) {
         no._l = 1;
         fs.readFile(part+db, (err, data) => {
           log('DB: Importing data...');
-          res(JSON.parse(data));
+          return JSON.parse(data);
+          //res(JSON.parse(data));
           log('DB: Data was loaded.');
           no._l = 0;
         });
-      } else { rej('DB: Error load database is using now.'); }
+      } else { //rej('DB: Error load database is using now.'); 
+      }
     } else if (e === 'save') {
       out = fs.createWriteStream(__dirname+part+db);
       if (no._s == 0) {
         no._s = 1;
         out.write(JSON.stringify(event.data), () => { no._s = 0; log('DB: New data has saved at '+(new Date)); });
-        res({msg: 'done'});
-      } else { rej('DB: Error save database is using now.'); }
+        //res({msg: 'done'});
+      } else { //rej('DB: Error save database is using now.'); 
+      }
     } else {
       log('DB: No event ' + e);
-      rej('DB: Error cant connect to database.');
+      //rej('DB: Error cant connect to database.');
     }
-  }).catch((err) => log(err));
+  //}).catch((err) => log(err));
 }
 class LunaClient {
   constructor() {
