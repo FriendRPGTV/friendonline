@@ -124,8 +124,8 @@ class LunaClient {
         });
         return obj;
     };
-    self.learn = (askmsg, ansmsg, feeling) => {
-        manager.chat[0].learn.push({"ask":askmsg,"ans":ansmsg,"feel":feeling});
+    self.learn = (askmsg, ansmsg) => {
+        manager.chat[0].learn.push({"ask":askmsg,"ans":ansmsg,"feel":"เรียนรู้"});
     };
     self.searchFor = (input, r = {}) => {
         manager.chat[0].learn.forEach(item => {
